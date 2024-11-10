@@ -3,3 +3,4 @@ pytest
 black
 pre-commit
 wheel
+pytest-cov
