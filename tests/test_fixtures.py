@@ -1,13 +1,7 @@
 from app.fixtures import CleaningConfig, clean_data
 from pytest import fixture
 
-from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
-
-
-@fixture
-def spark():
-    return SparkSession.builder.appName("pytest").getOrCreate()
 
 
 @fixture
