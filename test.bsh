@@ -1,1 +1,1 @@
-pytest --cov=app tests/
+pytest --cov-report term-missing --cov=app tests/
