@@ -4,7 +4,7 @@ setup(
     name="app",
     version="1.0.0",
     packages=find_packages(),
-    install_requires=["pyspark"],
+    install_requires=["pyspark", "requests"],
     entry_points={
         "console_scripts": ["app = app:main.main"],
     },
