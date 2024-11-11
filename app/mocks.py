@@ -1,7 +1,7 @@
 """Module that pulls configuration info from a web API."""
 
 from typing import Any
-import requests
+from requests import get, RequestException
 import logging
 
 from app.fixtures import CleaningConfig
@@ -14,10 +14,10 @@ logger = logging.getLogger(__name__)
 def _get_config_from_api(file: str) -> Any:
     """Get configuration info from a web API."""
     try:
-        response = requests.get("http://api.com/config?file={}".format(file))
+        response = get("http://api.com/config?file={}".format(file))
         response.raise_for_status()
         return response.json()
-    except requests.exceptions.RequestException as e:
+    except RequestException as e:
         logger.error("Error getting configuration from API: %s", e)
         return None
 
